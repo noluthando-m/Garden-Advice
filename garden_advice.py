@@ -1,31 +1,31 @@
-# Hardcoded values for the season and plant type
-season = "summer"  # TODO: Replace with input() to allow user interaction.
-plant_type = "flower"  # TODO: Replace with input() to allow user interaction.
+# Garden Advice Application
+# This program gives gardening advice based on the season and plant type.
 
-# Variable to hold gardening advice
-advice = ""
+def get_season_advice(season):
+    """Return advice based on the season."""
+    if season == "summer":
+        return "Water your plants regularly and provide some shade."
+    elif season == "winter":
+        return "Protect your plants from frost with covers."
+    else:
+        return "No seasonal advice available."
 
-# Determine advice based on the season
-if season == "summer":
-    advice += "Water your plants regularly and provide some shade.\n"
-elif season == "winter":
-    advice += "Protect your plants from frost with covers.\n"
-else:
-    advice += "No advice for this season.\n"
 
-# Determine advice based on the plant type
-if plant_type == "flower":
-    advice += "Use fertiliser to encourage blooms."
-elif plant_type == "vegetable":
-    advice += "Keep an eye out for pests!"
-else:
-    advice += "No advice for this type of plant."
+def get_plant_advice(plant_type):
+    """Return advice based on the plant type."""
+    if plant_type == "flower":
+        return "Use fertiliser to encourage blooms."
+    elif plant_type == "vegetable":
+        return "Keep an eye out for pests."
+    else:
+        return "No plant advice available."
 
-# Print the generated advice
-print(advice)
 
-# TODO: Examples of possible features to add:
-# - Add detailed comments explaining each block of code.
-# - Refactor the code into functions for better readability and modularity.
-# - Store advice in a dictionary for multiple plants and seasons.
-# - Recommend plants based on the entered season.
+# Ask the user for input
+season = input("Enter the season (summer/winter): ").lower()
+plant_type = input("Enter the plant type (flower/vegetable): ").lower()
+
+print("\nGardening Advice")
+print("----------------")
+print(get_season_advice(season))
+print(get_plant_advice(plant_type))
